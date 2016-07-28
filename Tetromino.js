@@ -19,8 +19,16 @@ var tetromino_types = [
 ];
 
 var render = function() {
-    var active_tetromino = createTetromino('I');
-    active_tetromino.forEach( function(block) {
+    var tetrominos = [];
+    tetrominos = tetrominos.concat(createTetromino('I'));
+    tetrominos = tetrominos.concat(createTetromino('J'));
+    tetrominos = tetrominos.concat(createTetromino('L'));
+    tetrominos = tetrominos.concat(createTetromino('O'));
+    tetrominos = tetrominos.concat(createTetromino('S'));
+    tetrominos = tetrominos.concat(createTetromino('T'));
+    tetrominos = tetrominos.concat(createTetromino('Z'));
+    
+    tetrominos.forEach( function(block) {
         block.drawBlock();
     }, this);
     ctx.stroke();
@@ -60,6 +68,54 @@ var createTetromino = function( tetro_type ) {
                 new Block(20,10),
                 new Block(30,10),
                 new Block(40,10),
+            ];
+        break;
+        case "J":
+            blocks = [
+                new Block(20, 30),
+                new Block(20, 40),
+                new Block(20, 50),
+                new Block(10, 50),
+            ];
+        break;
+        case "L":
+            blocks = [
+                new Block(40, 30),
+                new Block(40, 40),
+                new Block(40, 50),
+                new Block(50, 50),
+            ];
+        break;
+        case "O":
+            blocks = [
+                new Block(20, 80),
+                new Block(20, 70),
+                new Block(10, 80),
+                new Block(10, 70),
+            ];
+        break;
+        case "S":
+            blocks = [
+                new Block(40, 80),
+                new Block(50, 80),
+                new Block(50, 70),
+                new Block(60, 70),
+            ];
+        break;
+        case "T":
+            blocks = [
+                new Block(20, 100),
+                new Block(10, 110),
+                new Block(20, 110),
+                new Block(30, 110),
+            ];
+        break;
+        case "Z":
+            blocks = [
+                new Block(50, 100),
+                new Block(60, 100),
+                new Block(60, 110),
+                new Block(70, 110),
             ];
         break;
     }
